@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Jost } from "next/font/google";
-import { SiteFooter } from "@/components/layout/site-footer";
-import { SiteHeader } from "@/components/layout/site-header";
-import { siteConfig } from "@/config/site";
+import { SiteFooter } from "../components/layout/site-footer";
+import { SiteHeader } from "../components/layout/site-header";
+import { siteConfig } from "../config/site";
 import "./globals.css";
 
 const jost = Jost({
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: siteConfig.seo.keywords,
+  keywords: [...siteConfig.seo.keywords],
   alternates: {
     canonical: "/",
   },
